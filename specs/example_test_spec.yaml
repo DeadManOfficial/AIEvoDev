@@ -1,0 +1,59 @@
+# Example Specification for Python Unit Test Generation
+# This YAML defines the requirements for generating unit tests for a Python function.
+
+problem_statement: "Generate a comprehensive suite of unit tests for the 'calculate_average' Python function, ensuring correctness for various inputs and robust handling of edge cases."
+
+target_function_info:
+  name: "calculate_average"
+  file_path: "src/utils.py" # Example path, would be read dynamically
+  # In a real system, signature and docstring would be extracted automatically
+  signature: "def calculate_average(numbers: list[int]) -> float:"
+  docstring: |
+    Calculates the average of a list of numbers.
+
+    Args:
+        numbers: A list of integers.
+
+    Returns:
+        The average of the numbers as a float.
+
+    Raises:
+        ValueError: If the input list is empty.
+
+  # The actual source code of the function, to be provided by the user or read from file
+  source_code: |
+    def calculate_average(numbers: list[int]) -> float:
+        if not numbers:
+            raise ValueError("Input list cannot be empty.")
+        return sum(numbers) / len(numbers)
+
+test_specifications:
+  framework: "pytest" # Can be "unittest" or "pytest"
+  min_coverage_percentage: 90 # Aim for at least 90% code coverage
+  test_cases_to_include:
+    - functional_correctness: # Basic, expected behavior
+        - "positive integers"
+        - "negative integers"
+        - "mixed positive and negative integers"
+        - "single element list"
+    - edge_cases: # Boundary conditions and unusual inputs
+        - "empty list (should raise ValueError)"
+        - "list with zeros"
+        - "large list of numbers" # To test potential performance, though not primary
+    - error_handling: # Verify expected exceptions are raised
+        - "non-list input (e.g., None, string, int)" # Implied type checking or error handling
+  output_format: "single_file" # Can be "single_file" or "separate_files_per_test_case"
+
+adversarial_goals: # For DRQ integration, define what makes tests "good"
+  maximize_test_effectiveness: "The generated tests should identify regressions when the target function's logic is subtly altered (e.g., off-by-one errors, incorrect arithmetic)."
+  minimize_false_positives: "Tests must pass when the target function's implementation is correct and adhere to its specification."
+  maximize_bug_detection_rate: "Tests should collectively detect at least 80% of common implementation bugs for this type of function."
+
+non_functional_requirements:
+  max_execution_time_seconds: 5 # The entire test suite should run within 5 seconds
+  readability_score_threshold: 0.7 # Placeholder for a metric like Flesch-Kincaid for code comments/structure (if applicable)
+
+llm_configuration: # Configuration for the LLM used for generation
+  model_name: "gpt-4o-mini"
+  temperature: 0.5
+  max_tokens: 1000

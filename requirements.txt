@@ -1,0 +1,28 @@
+# AIEvoDev - Self-Optimizing AI Test Generator
+# Pinned versions for reproducible installs
+
+# Core LLM providers
+openai>=1.0.0,<3.0.0
+google-genai>=1.0.0
+
+# LangChain ecosystem
+langchain>=1.0.0,<2.0.0
+langchain-classic>=1.0.0,<2.0.0
+langchain-core>=1.0.0,<2.0.0
+langchain-openai>=1.0.0,<2.0.0
+langchain-google-genai>=2.0.0
+
+# Environment and config
+python-dotenv>=1.0.0,<2.0.0
+pyyaml>=6.0.0,<7.0.0
+
+# CLI and display
+typer>=0.9.0,<1.0.0
+rich>=13.0.0,<14.0.0
+
+# Testing and coverage
+pytest>=8.0.0,<10.0.0
+coverage>=7.0.0,<8.0.0
+
+# Optional but recommended
+tiktoken>=0.5.0,<1.0.0
