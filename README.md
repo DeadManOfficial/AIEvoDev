@@ -1,8 +1,25 @@
 # AIEvoDev
 
-Self-optimizing AI test generator that uses adversarial evolution to create robust unit tests.
+### AI That Writes Tests, Then Makes Them Better
 
-## What It Does
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![LangChain](https://img.shields.io/badge/LangChain-Powered-orange.svg)](https://langchain.com/)
+[![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4-412991.svg)](https://openai.com/)
+[![Google](https://img.shields.io/badge/Google-Gemini-4285F4.svg)](https://deepmind.google/technologies/gemini/)
+
+> **Stop writing tests manually.** Let AI generate them, then watch it improve them through adversarial evolution until they catch real bugs.
+
+---
+
+## Why AIEvoDev?
+
+- **Save hours** - Generate comprehensive test suites in minutes
+- **Catch more bugs** - Adversarial evolution finds edge cases you'd miss
+- **Self-improving** - Tests get better each generation through mutation testing
+- **Production-ready** - Outputs clean pytest code you can commit directly
+
+## How It Works
 
 AIEvoDev generates Python unit tests using LLMs (GPT-4 or Gemini), then improves them through an evolutionary loop:
 
@@ -16,7 +33,7 @@ AIEvoDev generates Python unit tests using LLMs (GPT-4 or Gemini), then improves
 ### 1. Clone
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/AIEvoDev.git
+git clone https://github.com/DeadManOfficial/AIEvoDev.git
 cd AIEvoDev
 ```
 
